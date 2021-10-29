@@ -4,12 +4,12 @@ import express from 'express';
 // import multer from 'multer';
 // import multerConfig from './config/multer';
 
-//import PointsController from './controllers/PointsController';
+import DogsController from './controllers/DogsController';
 
 const routes = express.Router(); 
 // const upload = multer(multerConfig);
 
-//const pointsController = new PointsController();
+const dogsController = new DogsController();
 
 /* routes.get('/items', itemsController.index);
 routes.get('/points', pointsController.index);
@@ -17,7 +17,7 @@ routes.get('/points/:id', pointsController.show);
  */
 
 /* routes.post(
-  '/points', 
+  '/dogs', 
   upload.single('image'), 
   celebrate({
     body: Joi.object().keys({
@@ -36,8 +36,7 @@ routes.get('/points/:id', pointsController.show);
   pointsController.create
 ); */
 
-routes.get('/dogs', (req, res) => {
-  res.send('Fez get em /dogs');
-});
+routes.get('/dogs', dogsController.index);
+routes.post('/dogs', dogsController.create);
 
 export default routes;

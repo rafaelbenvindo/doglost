@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { DogListComponent } from './dog-list/dog-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DogFormComponent } from './dog-form/dog-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,12 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     HeaderComponent,
     MenuComponent,
-    DogListComponent
+    DogListComponent,
+    DogFormComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule
   ],

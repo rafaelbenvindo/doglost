@@ -42,3 +42,15 @@ a:link.navlink, a:visited.navlink {
 .back-link {
   padding-top: 50px;
 }
+
+.d-flex {
+  display: flex;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.flex-column {
+  flex-direction: column;
+}

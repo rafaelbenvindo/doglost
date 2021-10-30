@@ -18,18 +18,23 @@ body {
   font-size: 4em;
 }
 
-.opcoes {
+.lista {
   list-style: none;
 }
 
-.opcao {
+.item-lista {
   background-color: rgb(254, 201, 61);
   padding: 10px;
   margin-bottom: 20px;
   font-size: 1.25em;
 }
 
-a:link.navlink  {
+a:link.navlink, a:visited.navlink {
   text-decoration: none;
   color: inherit;
+}
+
+.item-dog {
+  display: flex;
+  justify-content: space-between;
 }

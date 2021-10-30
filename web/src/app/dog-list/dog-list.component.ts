@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Dog } from '../dog';
+import { DogService } from '../dog.service';
 
 @Component({
   selector: 'app-dog-list',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DogListComponent implements OnInit {
 
-  constructor() { }
+  dogs: Dog[] = [];
+
+  constructor(private dogService: DogService) { };
 
   ngOnInit(): void {
-  }
+    this.load();
+  };
 
+  async load() {
+    this.dogs = await this.dogService.list().toPromise();
+  }
 }

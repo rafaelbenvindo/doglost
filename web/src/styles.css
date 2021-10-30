@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('assets/reset.css');
+
+body {
+  font-family: 'Brush Script MT', cursive;
+  text-align: center;
+  margin: 20px;
+}
+
+.container {
+  max-width: 40%;
+  margin: auto;
+}
+
+.titulo {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 4em;
+}
+
+.opcoes {
+  list-style: none;
+}
+
+.opcao {
+  background-color: rgb(254, 201, 61);
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 1.25em;
+}
+
+a:link.navlink  {
+  text-decoration: none;
+  color: inherit;
+}

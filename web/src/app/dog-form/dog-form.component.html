@@ -1,15 +1,15 @@
 <form [formGroup]="dogForm" (submit)="record()">
   <fieldset class="d-flex flex-column">
-    <label for="name">Nome</label>
-    <input formControlName="name" type="text" name="name">
+    <label class="text-left titulo-campo" for="name">Nome*</label>
+    <input class="mb-3" formControlName="name" type="text" name="name">
   </fieldset>
 
-  <fieldset class="d-flex justify-space-between">
-    <legend>Gênero</legend>
+  <fieldset class="d-flex mb-3">
+    <legend class="titulo-campo">Gênero*</legend>
 
     <div>
       <input formControlName="gender" type="radio" name="gender" id="male" value="M">
-      <label for="male">Macho</label>
+      <label class="mr-3" for="male">Macho</label>
     </div>
     <div>
       <input formControlName="gender" type="radio" name="gender" id="female" value="F">
@@ -17,5 +17,6 @@
     </div>
   </fieldset>
 
-  <button [disabled]="dogForm.invalid" type="submit" class="button">Cadastrar</button>
+  <button [disabled]="dogForm.invalid" type="submit" class="button mb-3">Cadastrar</button>
 </form>
+

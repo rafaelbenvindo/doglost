@@ -16,4 +16,9 @@ export class DogService {
     return this.http.
       get<Dog[]>(API + '/dogs');
   }
+
+  create(name: string, gender: string) {
+    return this.http
+      .post(API + '/dogs', {name, gender});
+  }
 }

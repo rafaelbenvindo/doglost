@@ -27,6 +27,17 @@ export class DogFormComponent implements OnInit {
     const name = this.dogForm.get('name').value;
     const gender = this.dogForm.get('gender').value;
 
-    console.log("Fez submit! Valores: ", name, gender);
+    this.dogService.create(name, gender).subscribe(d => {
+      alert('Cachorro cadastrado!');
+      this.limpaForm();
+    },
+    err => {
+      console.log(err);
+      alert('Ocorreu erro durante o cadastro!');
+    });
+  }
+
+  limpaForm() {
+    this.dogForm.reset();
   }
 }

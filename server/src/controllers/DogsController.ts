@@ -17,23 +17,29 @@ class DogsController {
       gender
     } = request.body;
 
-    const trx = await knex.transaction();
-
     const dog = {
       name,
       gender
     };
-  
-    const insertedIds = await trx('dogs').insert(dog);
-  
-    const dog_id = insertedIds[0];
-  
-    await trx.commit();
-  
-    return response.json({ 
-      id: dog_id,
-      ...dog,
-    });
+
+    const trx = await knex.transaction();
+
+    try {
+      const insertedIds = await trx('dogs').insert(dog);
+
+      const dog_id = insertedIds[0];
+
+      await trx.commit();
+
+      return response.json({
+        id: dog_id,
+        ...dog,
+      });
+    } catch (e) {
+      await trx.rollback();
+      console.log("Error: ", e);
+      return response.status(400).json({error: e});
+    }
   }
 }
 

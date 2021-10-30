@@ -39,10 +39,6 @@ a:link.navlink, a:visited.navlink {
   justify-content: space-between;
 }
 
-.back-link {
-  padding-top: 50px;
-}
-
 .d-flex {
   display: flex;
 }

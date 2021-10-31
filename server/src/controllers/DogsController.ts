@@ -41,6 +41,22 @@ class DogsController {
       return response.status(400).json({error: e});
     }
   }
+
+  async clean(request: Request, response: Response) {
+    console.log('Começou o clean');
+    const trx = await knex.transaction();
+    console.log('criou transacao');
+    try {
+      await trx('dogs').del();
+      console.log('chamou delete');
+      await trx.commit();
+      console.log('chamou commit');
+      return response.status(200).send('');
+    } catch(e) {
+      await trx.rollback();
+      console.log(e);
+    }
+  }
 }
 
 export default DogsController;

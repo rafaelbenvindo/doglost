@@ -80,3 +80,10 @@ a:link.navlink, a:visited.navlink {
   font-size: 1.25em;
   cursor: pointer;
 }
+
+@media screen and (max-width: 720px) {
+  .container {
+    max-width: 90%;
+  }
+ 
+}

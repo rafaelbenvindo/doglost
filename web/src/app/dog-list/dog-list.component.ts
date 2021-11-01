@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Dog } from '../dog';
-import { DogService } from '../dog.service';
 
 @Component({
   selector: 'app-dog-list',
@@ -11,13 +11,10 @@ export class DogListComponent implements OnInit {
 
   dogs: Dog[] = [];
 
-  constructor(private dogService: DogService) { };
+  constructor(private activatedRoute: ActivatedRoute) { };
 
   ngOnInit(): void {
-    this.load();
+    this.dogs = this.activatedRoute.snapshot.data.dogs;
   };
 
-  async load() {
-    this.dogs = await this.dogService.list().toPromise();
-  }
 }

@@ -3,8 +3,8 @@ import Knex = require('knex');
 export async function up(knex: Knex) {
   return knex.schema.createTable('dogs', table => {
     table.increments('id').primary();
-    table.string('name').notNullable();
-    table.string('gender').notNullable();
+    table.string('name', 40).notNullable();
+    table.string('gender', 1).notNullable();
   });
 }
 

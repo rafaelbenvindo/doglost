@@ -8,4 +8,6 @@ RUN npm install
 
 COPY . .
 
+RUN npm install -g knex && knex migrate:latest
+
 CMD ["npm", "start"]
